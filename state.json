@@ -23,8 +23,8 @@
     {
       "n": "2b",
       "nome": "Repositório GitHub",
-      "status": "pending",
-      "nota": "A pasta nao e um repo git e o gh nao foi acionado. Ver pendencia P6."
+      "status": "done",
+      "nota": "Repo dev-buildv/andraco em main, 4 pastas de deploy commitadas e pushadas (HEAD == origin/main)."
     },
     {
       "n": 3,
@@ -154,8 +154,8 @@
     },
     {
       "id": "P6",
-      "titulo": "Criar o repositório GitHub",
-      "detalhe": "dev-buildv/andraco-site privado, versionando só a pasta de deploy + PROJETO.md + state.json. A pasta atual não é um repo git.",
+      "titulo": "Repo criado — falta configurar os 2 projetos na Vercel",
+      "detalhe": "O repo dev-buildv/andraco existe e esta em main (HEAD == origin/main), com as 4 pastas de deploy commitadas. O que falta e criar DOIS projetos na Vercel apontando o Root Directory: andraco-site -> deploy-vercel-site e andraco-lp -> deploy-vercel-lp. Sem o Root Directory a Vercel builda a raiz (que nao tem index.html nem config) e falha com 'No Output Directory named public found'. Ver DEPLOY.md.",
       "responsavel": "usuario",
       "bloqueia_deploy": true
     },
@@ -208,7 +208,7 @@
     "preview_site": "http://127.0.0.1:8850/",
     "preview_lp": "http://127.0.0.1:8850/residencial.html",
     "preview_privacidade": "http://127.0.0.1:8850/privacidade.html",
-    "repo": null,
+    "repo": "https://github.com/dev-buildv/andraco",
     "dominio": null
   },
   "marca": {
@@ -254,5 +254,22 @@
     "Solarium",
     "Estela",
     "Neo"
-  ]
+  ],
+  "deploy_vercel": {
+    "projetos": [
+      {
+        "nome": "andraco-site",
+        "root_directory": "deploy-vercel-site",
+        "framework": "Other"
+      },
+      {
+        "nome": "andraco-lp",
+        "root_directory": "deploy-vercel-lp",
+        "framework": "Other"
+      }
+    ],
+    "build_fixado_no_arquivo": "framework:null, buildCommand:null, installCommand:null, outputDirectory:'.'",
+    "causa_provavel_de_falha": "Root Directory nao apontado -> 'No Output Directory named public found after the Build completed'",
+    "verificado": "vercel.json validado contra o schema oficial (0 erros); 11 padroes source compilam com path-to-regexp; nomes seguros em Linux; paridade disco/git 43-43 e 91-91"
+  }
 }

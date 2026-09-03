@@ -27,3 +27,6 @@ desktop.ini
 node_modules/
 __pycache__/
 *.pyc
+
+# link local de projeto da Vercel (gerado pelo CLI)
+.vercel/
