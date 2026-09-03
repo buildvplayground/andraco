@@ -1,0 +1,5 @@
+# LP de teste A/B — trafego pago.
+# Crawl liberado (o Google Ads rastreia a landing para checar politica);
+# o indice organico e barrado pela meta robots noindex de cada pagina.
+User-agent: *
+Allow: /

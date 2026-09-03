@@ -66,27 +66,30 @@
       "n": 9,
       "nome": "Deploy",
       "status": "blocked",
-      "nota": "deploy-vercel/ e deploy-wordpress/ prontos e verificados. Falta dominio/hospedagem e o repo."
+      "nota": "4 pacotes independentes prontos e verificados (2 Vercel + 2 WordPress, site e LP separados). Falta dominio/hospedagem e o repo."
     }
   ],
   "entregaveis": {
     "site": {
       "arquivo": "Site/index.html",
       "rota": "/",
-      "papel": "Versão A do teste A/B (site institucional reestruturado)"
+      "papel": "Versao A do teste A/B (site institucional)"
     },
     "lp": {
       "arquivo": "Site/residencial.html",
-      "rota": "/residencial",
-      "papel": "Versão B do teste A/B (LP Construção Residencial)",
-      "robots": "noindex, follow"
+      "rota": "/ (no proprio deploy) ou /residencial",
+      "papel": "Versao B do teste A/B (LP Construcao Residencial)",
+      "robots": "noindex, follow",
+      "copy": "Drive residencial.md — 58 trechos conferidos, todos presentes"
     },
     "privacidade": {
       "arquivo": "Site/privacidade.html",
       "rota": "/privacidade"
     },
-    "deploy_vercel": "deploy-vercel/ (Root Directory = deploy-vercel, Framework = Other)",
-    "deploy_wordpress": "deploy-wordpress/andraco-engenharia/ (tema; 3 templates)"
+    "deploy_vercel_site": "deploy-vercel-site/ (Root Directory = deploy-vercel-site, Framework = Other) — 10,81 MB",
+    "deploy_vercel_lp": "deploy-vercel-lp/ (Root Directory = deploy-vercel-lp, Framework = Other) — 4,34 MB, LP na raiz",
+    "deploy_wordpress_site": "deploy-wordpress-site/andraco-engenharia/ — 11,28 MB",
+    "deploy_wordpress_lp": "deploy-wordpress-lp/andraco-lp/ — 4,83 MB, a LP e a front-page"
   },
   "rastreamento": {
     "gtm": "GTM-P6RVST79",
@@ -115,8 +118,10 @@
     "achados_bloqueantes": 0,
     "php_lint_erros": 0,
     "suites_no_tema_wordpress": "audit + contraste + interacoes + tags — todas OK",
-    "bugs_corrigidos": 14,
-    "imagens": "175,7MB -> 9,71MB (-94,5%)"
+    "bugs_corrigidos": 16,
+    "imagens": "175,7MB -> 9,71MB (-94,5%)",
+    "pacotes_independentes": "os 4 pacotes passam sozinhos: overflow 0, contraste 0 falhas, 0 img sem alt/quebrada, 0 falha de rede em recurso proprio",
+    "lp_fidelidade_copy": "58/58 trechos da copy oficial do Drive presentes na LP"
   },
   "pendencias": [
     {
@@ -217,14 +222,20 @@
       "#000000"
     ],
     "acento_cromatico": null,
-    "display": "Alfa Slab One (oficial, Google Fonts)",
-    "texto": "Archivo (substituta da Lastica — ver P10)",
+    "display": "Instrument Sans (700 bold / 600 semibold)",
+    "texto": "Geist (400 regular / 500 nav / 600 semibold)",
     "icones_servico": 6,
     "patterns": [
       "pat-grid",
       "pat-hatch",
       "pat-apex",
       "pat-rule"
+    ],
+    "pesos_em_uso": [
+      400,
+      500,
+      600,
+      700
     ]
   },
   "projetos_portfolio": [

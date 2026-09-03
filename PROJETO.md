@@ -119,6 +119,8 @@ Rodada nas **3 páginas** e depois **repetida contra a saída do tema WordPress*
 | GTM + Consent Mode + Merlin + fallback WhatsApp | **OK nas 3 páginas** |
 | `php -l` em todos os 12 arquivos do tema | **sem erro** |
 | Ícones, logos e imagens de projeto referenciados existem no disco | **87/87 OK** |
+| Os **4 pacotes de deploy** auditados isoladamente, cada um na sua porta | **passam sozinhos** |
+| Fidelidade da LP à copy oficial do Drive | **58/58 trechos** |
 
 ### Bugs reais encontrados e corrigidos no caminho
 1. `overflow-x:hidden` no `body` **matava todo `position:sticky`** da página.
@@ -146,6 +148,14 @@ Rodada nas **3 páginas** e depois **repetida contra a saída do tema WordPress*
     paleta da rodada 1.
 14. **Windows: `shutil.rmtree` falha com `WinError 32`** se algo tem handle na pasta.
     Esvazie o conteúdo de baixo para cima em vez de remover o diretório.
+15. **Trocar a fonte não é trocar o `font-family`.** Instrument Sans é bem mais
+    estreita que Alfa Slab One: sem recalibrar a escala (+25%), as medidas de
+    leitura em `ch` e o tracking, os títulos ficariam pequenos e as colunas
+    desbalanceadas. Escala, medida e tracking mudam **junto** com a família.
+16. **Ordem de geração importa no pipeline.** Os temas WordPress foram gerados
+    antes da troca de fontes e saíram com o par antigo — a auditoria dos pacotes
+    pegou. O gerador do tema passou a criar o `screenshot.png` sozinho pelo mesmo
+    motivo (o `limpar()` apagava e o passo seguinte quebrava).
 
 Todos registrados em `design-system/README.md` §8 para alimentar o `revisar-frontend`.
 
@@ -163,14 +173,35 @@ python "<scratchpad>/serve.py"     # serve Site/ (primeira porta livre a partir 
 
 ---
 
-## Pastas de deploy
+## Pastas de deploy — 4 pacotes INDEPENDENTES
 
-| Pasta | Alvo |
-|---|---|
-| `deploy-vercel/` | estático + `vercel.json` (cleanUrls, redirects 301, cache, cabeçalhos de segurança), `robots.txt`, `sitemap.xml` |
-| `deploy-wordpress/andraco-engenharia/` | tema completo (3 templates, GTM/Merlin via hooks, redirects legados) |
+Site e LP têm pacotes separados: cada um pode ir para um projeto/domínio próprio e
+o teste A/B roda sem acoplamento.
 
-Instruções em `deploy-vercel/LEIA-ME.md` e `deploy-wordpress/LEIA-ME.md`.
+| Pasta | Alvo | Peso | Home |
+|---|---|---|---|
+| `deploy-vercel-site/` | Vercel · Versão A | 10,8 MB | site institucional |
+| `deploy-vercel-lp/` | Vercel · Versão B | **4,3 MB** | **a LP** |
+| `deploy-wordpress-site/andraco-engenharia/` | tema WP · Versão A | 11,3 MB | site institucional |
+| `deploy-wordpress-lp/andraco-lp/` | tema WP · Versão B | **4,8 MB** | **a LP** |
+
+Cada pacote leva **só os assets que a sua própria página referencia** — a LP não
+carrega os 15 projetos nem os 6 ícones do site, só os 6 e 4 que usa. Por isso é
+menos da metade do peso.
+
+O tema da LP difere do tema do site em cinco pontos: a LP é a `front-page`, o
+`noindex` vale para todo o site (menos a privacidade), o preload aponta para o
+`hero-lp`, os redirects legados do WordPress antigo não existem, e a nav é só
+logo + CTA.
+
+Instruções em cada `LEIA-ME.md`.
+
+### Fidelidade da LP à copy do Drive
+A LP segue o doc aprovado (`residencial.md`) nas 8 seções. Um script confere
+**58 trechos da copy um a um** — todos presentes, botões com o rótulo "Fale
+Conosco" e nenhum formulário, como o doc determina.
+Um acréscimo registrado: a banda de números (o doc supunha que só havia uma
+métrica; a premissa caiu com o `NÚMEROS DE AUTORIDADE.pdf`).
 
 ---
 
@@ -196,7 +227,10 @@ Instruções em `deploy-vercel/LEIA-ME.md` e `deploy-wordpress/LEIA-ME.md`.
 
 - **Paleta monocromática do brandbook** — preto, branco e os 5 cinzas. Sem âmbar
   (erro da rodada 1) e sem o navy do wireframe da LP. A autoridade é o brandbook.
-- **Tipografia:** Alfa Slab One (oficial) + Archivo (substituta da Lastica).
+- **Tipografia (rodada 3):** **Instrument Sans** nos títulos + **Geist** no corpo,
+  com os 3 pesos misturados de propósito — 700 bold (h1/h2/numerais), 600 semibold
+  (h3, eyebrow, botão, ênfase, rótulo), 400 regular (corpo). 500 só na nav.
+  Trocou o par Alfa Slab One + Archivo da rodada 2.
 - **Ícones:** os 6 do kit do cliente, nunca biblioteca genérica.
 - **Eyebrow sem `::before`** (pedido explícito): o registro vem do monoespaçado +
   tracking `.16em`.

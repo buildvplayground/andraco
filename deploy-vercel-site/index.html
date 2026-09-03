@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andraco Engenharia — Projetos e obras residenciais em Curitiba</title>
+<meta name="description" content="Escritório de engenharia e arquitetura em Curitiba. Consultoria, projeto arquitetônico, renderização 3D, projeto executivo, execução de obras e reformas. Mais de 15 milhões em obras entregues.">
+<meta name="theme-color" content="#1A1A1C">
+<link rel="canonical" href="https://andracoengenharia.com.br/">
+<link rel="icon" href="assets/logos/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/logos/favicon-180.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Andraco Engenharia — Projetos e obras residenciais em Curitiba">
+<meta property="og:description" content="Cuidamos de toda a burocracia bancária, financiamento e escolha do terreno, desenvolvimento dos projetos e execução da obra.">
+<meta property="og:image" content="https://andracoengenharia.com.br/assets/img/hero-site.webp">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Sans:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-site.webp" fetchpriority="high">
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Consent Mode v2 — tudo negado até o visitante escolher no banner (LGPD).
+     Precisa rodar ANTES do GTM, senão as tags disparam antes do consentimento. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent','default',{
+    ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied',
+    analytics_storage:'denied',
+    functionality_storage:'granted', security_storage:'granted',
+    wait_for_update: 500
+  });
+  /* visitante que já aceitou antes: libera na carga, sem esperar novo clique */
+  try {
+    if (localStorage.getItem('andraco_consent_v1') === 'granted') {
+      gtag('consent','update',{
+        ad_storage:'granted', ad_user_data:'granted',
+        ad_personalization:'granted', analytics_storage:'granted'
+      });
+    }
+  } catch (e) { /* modo privado: segue negado */ }
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})
+(window,document,'script','dataLayer','GTM-P6RVST79');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6RVST79"
+  height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+<script>
+  /* Gate do motor de movimento. Failsafe: se o JS principal não subir em 2.5s,
+     o gate cai e todo o conteúdo aparece — nada depende de animação para existir. */
+  document.documentElement.setAttribute('data-motion','on');
+  setTimeout(function(){ if(!window.__motionReady) document.documentElement.removeAttribute('data-motion'); },2500);
+</script>
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M1 8h13M9.5 3.5 14 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="M2.5 8.6 6 12l7.5-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10.6 10.6 14.4 14.4M5 7h4M7 5v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 16 16"><path d="M3 2.6h2.4l1.1 2.7-1.4 1a7.4 7.4 0 0 0 3.6 3.6l1-1.4 2.7 1.1V13a.9.9 0 0 1-1 .9A11 11 0 0 1 2.1 3.6a.9.9 0 0 1 .9-1z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 16 16"><rect x="1.6" y="3.4" width="12.8" height="9.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m1.9 4.2 6.1 4.4 6.1-4.4" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 16 16"><rect x="2.2" y="2.2" width="11.6" height="11.6" rx="3.4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="2.9" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="11.4" cy="4.6" r=".95" fill="currentColor"/></symbol>
+  <symbol id="i-close" viewBox="0 0 16 16"><path d="m3.5 3.5 9 9m0-9-9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 16 16"><path d="M10 2.5 4.5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></symbol>
+  <symbol id="i-next" viewBox="0 0 16 16"><path d="M6 2.5 11.5 8 6 13.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></symbol>
+</svg>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+
+<!-- ============================== HEADER ============================== -->
+<header class="hdr">
+  <div class="container">
+    <a class="hdr-logo" href="#top" aria-label="Andraco Engenharia — início">
+      <img src="assets/logos/logo-white.png" alt="Andraco Engenharia" width="900" height="192">
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#financiamento">Financiamento</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#processo">Processo</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <a class="btn" data-wa-btn="contato">Solicitar orçamento <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu"><span></span></button>
+  </div>
+</header>
+
+<div class="scrim"></div>
+<nav class="drawer" id="menu-mobile" aria-label="Navegação">
+  <a href="#servicos">Serviços</a>
+  <a href="#financiamento">Financiamento</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#processo">Processo</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#contato">Contato</a>
+  <a class="btn" data-wa-btn="contato">Solicitar orçamento <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</nav>
+
+<!-- ============================== HERO ==============================
+     Espaçamento equilibrado: grade [corpo 1fr][trilho auto], espaço do header
+     reservado por padding-top e padding simétrico no corpo. -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img src="assets/img/hero-site.webp" alt="Projeto Akhenaton: residência horizontal em concreto, madeira e vidro, desenvolvida pela Andraco Engenharia" width="2000" height="1125" fetchpriority="high">
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-tex" aria-hidden="true"></div>
+
+  <div class="hero-body">
+    <div class="container">
+      <div class="hero-inner" data-reveal>
+        <span class="eyebrow">Engenharia e arquitetura · Curitiba</span>
+        <h1 data-hero-h>Solução completa para construir sua casa sem burocracia e com tranquilidade</h1>
+        <p class="lede">Cuidamos de toda a burocracia bancária, financiamento e escolha do terreno, desenvolvimento dos projetos e execução da obra.</p>
+        <div class="hero-actions">
+          <a class="btn" data-wa-btn="hero">Solicitar orçamento <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="#projetos">Ver projetos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-rail">
+    <div class="container">
+      <ul>
+        <li><b>+ de 15 milhões</b> em obras entregues</li>
+        <li><b>+ de 70</b> projetos e obras</li>
+        <li><b>+ de 9 anos</b> de mercado</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<main id="conteudo">
+
+<!-- ============================== NÚMEROS DE AUTORIDADE ============================== -->
+<section class="band" aria-label="Andraco em números">
+  <div class="pat-rule" aria-hidden="true"></div>
+  <div class="container">
+    <ul>
+      <li data-reveal>
+        <span class="pre">Gerenciamos</span>
+        <span class="n">+ de 15 <em>milhões</em></span>
+        <span class="l">de reais em obras executadas e entregues sob nossa responsabilidade técnica</span>
+      </li>
+      <li data-reveal>
+        <span class="pre">Construímos uma história de</span>
+        <span class="n">+ de 9 <em>anos</em></span>
+        <span class="l">de mercado, entregando solidez e segurança jurídica em cada contrato assinado</span>
+      </li>
+      <li data-reveal>
+        <span class="pre">Já entregamos</span>
+        <span class="n">+ de 70</span>
+        <span class="l">projetos e obras dentro de um período de 6 anos</span>
+      </li>
+      <li data-reveal>
+        <span class="pre">Somamos</span>
+        <span class="n">+ de 12 <em>anos</em></span>
+        <span class="l">de experiência prática em engenharia de campo e gestão de obras complexas</span>
+      </li>
+      <li data-reveal>
+        <span class="pre">Contamos com</span>
+        <span class="n">+ de 100</span>
+        <span class="l">colaboradores parceiros para entregar a sua obra de maneira assertiva e dentro do prazo</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== FINANCIAMENTO (split) ============================== -->
+<section class="sec" id="financiamento">
+  <div class="container">
+    <div class="split split--wide-text">
+      <div class="split-body" data-rv="left" data-reveal>
+        <span class="eyebrow">Financiamento</span>
+        <h2>Seu imóvel financiado com as melhores taxas do mercado</h2>
+        <div class="prose">
+          <p>Muitas famílias deixam de avançar no projeto da casa própria por insegurança no processo de financiamento ou por dúvidas quanto à aprovação do crédito junto à Caixa Econômica.</p>
+          <p>Atuamos com profundo conhecimento das diferentes faixas do programa <strong>Minha Casa Minha Vida</strong>, orientando cada etapa de forma estratégica.</p>
+          <p>Fazemos a análise completa do perfil, organizamos toda a documentação necessária e buscamos a aprovação do crédito <strong>antes mesmo do início do projeto</strong>, garantindo mais previsibilidade.</p>
+        </div>
+        <ul class="checklist">
+          <li><svg width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Análise de perfil e viabilidade do terreno</span></li>
+          <li><svg width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Organização de toda a documentação exigida</span></li>
+          <li><svg width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Aprovação do crédito antes do início do projeto</span></li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn" data-wa-btn="financiamento">Falar sobre financiamento <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <figure class="split-fig" data-reveal="fig">
+        <img src="assets/img/split-financiamento.webp" alt="Projeto Hórus: residência de dois pavimentos com estrutura aparente e jardim frontal" width="1300" height="731" loading="lazy" decoding="async">
+        <figcaption>Projeto Hórus</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SERVIÇOS (6 · ícones oficiais) ============================== -->
+<section class="sec bg-paper pat-grid" id="servicos">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Serviços</span>
+      <h2>Cuidamos de todas as etapas para que você não precise se preocupar com nada</h2>
+      <p class="lede">Do primeiro estudo de viabilidade até a entrega das chaves — você contrata só a etapa que precisa ou o pacote completo.</p>
+    </div>
+
+    <div class="svc">
+      <article class="svc-item" data-reveal>
+        <span class="svc-badge"><span class="svc-n">01</span><img src="assets/icons/consultoria.png" alt="" width="34" height="34" loading="lazy" aria-hidden="true"></span>
+        <h3>Consultoria em Projetos</h3>
+        <p>Avaliamos terreno, viabilidade e orçamento antes de qualquer contratação, para você decidir com base técnica e não em suposição.</p>
+      </article>
+
+      <article class="svc-item" data-reveal>
+        <span class="svc-badge"><span class="svc-n">02</span><img src="assets/icons/arquitetonico.png" alt="" width="34" height="34" loading="lazy" aria-hidden="true"></span>
+        <h3>Projetos Arquitetônicos</h3>
+        <p>Criamos o projeto ideal para suas necessidades e cuidamos de toda a parte técnica e legal até a aprovação nos órgãos competentes.</p>
+      </article>
+
+      <article class="svc-item" data-reveal>
+        <span class="svc-badge"><span class="svc-n">03</span><img src="assets/icons/render3d.png" alt="" width="34" height="34" loading="lazy" aria-hidden="true"></span>
+        <h3>Renderizações 3D</h3>
+        <p>Você vê a casa pronta antes de a obra começar: imagens realistas do projeto para validar cada decisão com segurança.</p>
+      </article>
+
+      <article class="svc-item" data-reveal>
+        <span class="svc-badge"><span class="svc-n">04</span><img src="assets/icons/executivo.png" alt="" width="34" height="34" loading="lazy" aria-hidden="true"></span>
+        <h3>Projeto Executivo Completo</h3>
+        <p>Projetos complementares detalhados e compatibilizados entre si, para a obra sair do papel sem retrabalho no canteiro.</p>
+      </article>
+
+      <article class="svc-item" data-reveal>
+        <span class="svc-badge"><span class="svc-n">05</span><img src="assets/icons/execucao.png" alt="" width="34" height="34" loading="lazy" aria-hidden="true"></span>
+        <h3>Execução de Obras</h3>
+        <p>Executamos a obra com gestão completa de prazos, equipe e materiais, garantindo qualidade e transparência em cada etapa.</p>
+      </article>
+
+      <article class="svc-item" data-reveal>
+        <span class="svc-badge"><span class="svc-n">06</span><img src="assets/icons/reformas.png" alt="" width="34" height="34" loading="lazy" aria-hidden="true"></span>
+        <h3>Reformas e Ampliações</h3>
+        <p>Reformas rápidas ou ampliações estruturais, com o mesmo padrão de controle e responsabilidade técnica das obras completas.</p>
+      </article>
+    </div>
+
+    <div class="cta-row" data-reveal>
+      <p class="cta-note">Encontrou o serviço que você precisa? Vamos falar sobre o seu projeto.</p>
+      <a class="btn" data-wa-btn="servicos">Solicitar orçamento <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAIXA 1 ============================== -->
+<section class="strip" aria-label="Projeto Vértice">
+  <div class="strip-media"><img src="assets/img/faixa-projeto.webp" alt="Projeto Vértice: residência em madeira e alvenaria implantada em terreno inclinado" width="1900" height="1069" loading="lazy" decoding="async"></div>
+  <div class="strip-body">
+    <div class="container">
+      <p class="q" data-reveal>Mais tranquilidade financeira e nenhuma surpresa ao longo da obra.</p>
+      <p class="src" data-reveal="soft">Projeto Vértice</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROCESSO — 7 etapas com imagem ============================== -->
+<section class="sec sec--after-strip" id="processo">
+  <div class="container">
+    <div class="sec-head sec-head--wide" data-reveal>
+      <div>
+        <span class="eyebrow">Processo</span>
+        <h2>Veja nosso fluxo de trabalho</h2>
+        <p class="lede">Sete etapas, do primeiro encontro ao gerenciamento da obra. Você sabe sempre em qual delas o seu projeto está.</p>
+      </div>
+      <p class="aside-stat"><span class="aside-stat__n">07</span><span class="aside-stat__l">etapas acompanhadas<br>de ponta a ponta</span></p>
+    </div>
+
+      <ol class="journey">
+        <li class="jn" data-reveal>
+          <span class="jn-n">01</span>
+          <figure class="jn-fig"><img src="assets/img/jornada-1.webp" alt="Reunião inicial entre o cliente e a equipe da Andraco" width="900" height="563" loading="lazy" decoding="async"></figure>
+          <div class="jn-body"><h3>Encontro com o cliente</h3><p>Entendemos o momento em que você está: terreno, orçamento disponível e expectativa de prazo.</p></div>
+        </li>
+        <li class="jn" data-reveal>
+          <span class="jn-n">02</span>
+          <figure class="jn-fig"><img src="assets/img/jornada-2.webp" alt="Levantamento do programa de necessidades da família" width="900" height="563" loading="lazy" decoding="async"></figure>
+          <div class="jn-body"><h3>Análise completa do desejo</h3><p>Levantamos o programa de necessidades da família e as restrições técnicas e legais do terreno.</p></div>
+        </li>
+        <li class="jn" data-reveal>
+          <span class="jn-n">03</span>
+          <figure class="jn-fig"><img src="assets/img/jornada-3.webp" alt="Estudos de conceito e croquis do projeto" width="900" height="563" loading="lazy" decoding="async"></figure>
+          <div class="jn-body"><h3>Ideação do conceito</h3><p>Definimos a direção arquitetônica que resolve o programa dentro do orçamento acordado.</p></div>
+        </li>
+        <li class="jn" data-reveal>
+          <span class="jn-n">04</span>
+          <figure class="jn-fig"><img src="assets/img/jornada-4.webp" alt="Composição técnica do anteprojeto em prancheta e computador" width="900" height="563" loading="lazy" decoding="async"></figure>
+          <div class="jn-body"><h3>Composição e desenvolvimento do anteprojeto</h3><p>Materializamos o conceito em plantas e volumetria para você validar antes do detalhamento.</p></div>
+        </li>
+        <li class="jn" data-reveal>
+          <span class="jn-n">05</span>
+          <figure class="jn-fig"><img src="assets/img/jornada-5.webp" alt="Validação do projeto com o cliente antes da aprovação" width="900" height="563" loading="lazy" decoding="async"></figure>
+          <div class="jn-body"><h3>Aprovação e desenvolvimento do projeto</h3><p>Conduzimos a aprovação nos órgãos competentes e desenvolvemos os projetos complementares.</p></div>
+        </li>
+        <li class="jn" data-reveal>
+          <span class="jn-n">06</span>
+          <figure class="jn-fig"><img src="assets/img/jornada-6.webp" alt="Entrega do pacote de projetos aprovados ao cliente" width="900" height="563" loading="lazy" decoding="async"></figure>
+          <div class="jn-body"><h3>Entrega do projeto finalizado</h3><p>Você recebe o pacote completo de projetos aprovados, pronto para execução.</p></div>
+        </li>
+        <li class="jn" data-reveal>
+          <span class="jn-n">07</span>
+          <figure class="jn-fig"><img src="assets/img/jornada-7.webp" alt="Acompanhamento técnico da obra em canteiro" width="900" height="563" loading="lazy" decoding="async"></figure>
+          <div class="jn-body"><h3>Gerenciamento da obra</h3><p>Assumimos prazos, equipe e materiais até a vistoria final e a entrega das chaves.</p></div>
+        </li>
+      </ol>
+  </div>
+</section>
+
+<!-- ============================== PROJETOS (15) ============================== -->
+<section class="sec bg-dark pat-hatch" id="projetos">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Projetos desenvolvidos</span>
+      <h2>Veja algumas obras e projetos que assinamos</h2>
+      <p class="lede">Quinze projetos residenciais desenvolvidos pela nossa equipe de engenharia e arquitetura. Clique para abrir a galeria de cada um.</p>
+    </div>
+
+    <div class="pf">
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Outbox"
+        data-gallery="assets/img/portfolio/outbox/01.webp|assets/img/portfolio/outbox/02.webp|assets/img/portfolio/outbox/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/outbox/cover.webp" alt="Projeto Outbox: residência de três pavimentos com volumes em concreto e madeira sobre espelho d'água" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Outbox</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Luxor"
+        data-gallery="assets/img/portfolio/luxor/01.webp|assets/img/portfolio/luxor/02.webp|assets/img/portfolio/luxor/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/luxor/cover.webp" alt="Projeto Luxor: volume branco escultórico suspenso com fechamento em vidro" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Alto padrão</span><h3>Luxor</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Sakkara"
+        data-gallery="assets/img/portfolio/sakkara/01.webp|assets/img/portfolio/sakkara/02.webp|assets/img/portfolio/sakkara/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/sakkara/cover.webp" alt="Projeto Sakkara: sobrado de fachada branca com painel em madeira e portão metálico" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Sakkara</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Hórus"
+        data-gallery="assets/img/portfolio/horus/01.webp|assets/img/portfolio/horus/02.webp|assets/img/portfolio/horus/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/horus/cover.webp" alt="Projeto Hórus: residência de dois pavimentos com estrutura aparente e jardim frontal" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Alto padrão</span><h3>Hórus</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Andirá"
+        data-gallery="assets/img/portfolio/andira/01.webp|assets/img/portfolio/andira/02.webp|assets/img/portfolio/andira/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/andira/cover.webp" alt="Projeto Andirá: fachada com torre em madeira ripada e garagem recuada entre palmeiras" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Alto padrão</span><h3>Andirá</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Ísis"
+        data-gallery="assets/img/portfolio/isis/01.webp|assets/img/portfolio/isis/02.webp|assets/img/portfolio/isis/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/isis/cover.webp" alt="Projeto Ísis: residência horizontal com grandes beirais e revestimento em pedra" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Ísis</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Akhenaton"
+        data-gallery="assets/img/portfolio/akhenaton/01.webp|assets/img/portfolio/akhenaton/02.webp|assets/img/portfolio/akhenaton/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/akhenaton/cover.webp" alt="Projeto Akhenaton: residência horizontal em concreto, madeira e vidro" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Alto padrão</span><h3>Akhenaton</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Delta"
+        data-gallery="assets/img/portfolio/delta/01.webp|assets/img/portfolio/delta/02.webp|assets/img/portfolio/delta/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/delta/cover.webp" alt="Projeto Delta: casa térrea com cobertura inclinada em terreno arborizado" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Delta</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Vértice"
+        data-gallery="assets/img/portfolio/vertice/01.webp|assets/img/portfolio/vertice/02.webp|assets/img/portfolio/vertice/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/vertice/cover.webp" alt="Projeto Vértice: residência em madeira e alvenaria implantada em terreno inclinado" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Vértice</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Ventus"
+        data-gallery="assets/img/portfolio/ventus/01.webp|assets/img/portfolio/ventus/02.webp|assets/img/portfolio/ventus/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/ventus/cover.webp" alt="Projeto Ventus: fachada branca com jardim suspenso e porta pivotante em madeira" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Alto padrão</span><h3>Ventus</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Gaia"
+        data-gallery="assets/img/portfolio/gaia/01.webp|assets/img/portfolio/gaia/02.webp|assets/img/portfolio/gaia/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/gaia/cover.webp" alt="Projeto Gaia: volumes brancos com painel vertical em madeira e garagem coberta" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Gaia</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Infinity"
+        data-gallery="assets/img/portfolio/infinity/01.webp|assets/img/portfolio/infinity/02.webp|assets/img/portfolio/infinity/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/infinity/cover.webp" alt="Projeto Infinity: fachada com painel em madeira e cobogó metálico escuro" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Infinity</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Solarium"
+        data-gallery="assets/img/portfolio/solarium/01.webp|assets/img/portfolio/solarium/02.webp|assets/img/portfolio/solarium/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/solarium/cover.webp" alt="Projeto Solarium: sobrado com brises verticais e garagem para dois carros" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Solarium</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Estela"
+        data-gallery="assets/img/portfolio/estela/01.webp|assets/img/portfolio/estela/02.webp|assets/img/portfolio/estela/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/estela/cover.webp" alt="Projeto Estela: fachada com painel de cobogó em terracota e revestimento em pedra" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Alto padrão</span><h3>Estela</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+
+      <button class="pf-card" type="button" data-reveal="fig" data-title="Projeto Neo"
+        data-gallery="assets/img/portfolio/neo/01.webp|assets/img/portfolio/neo/02.webp|assets/img/portfolio/neo/03.webp">
+        <span class="pf-thumb"><img src="assets/img/portfolio/neo/cover.webp" alt="Projeto Neo: sobrado contemporâneo com volume em balanço sobre a garagem" width="1000" height="563" loading="lazy" decoding="async"><span class="pf-zoom"><svg width="16" height="16" aria-hidden="true"><use href="#i-zoom"/></svg></span></span>
+        <span class="pf-meta"><span class="pf-cat">Residencial</span><h3>Neo</h3><span class="pf-count">3 imagens</span></span>
+      </button>
+    </div>
+
+    <p class="pf-note" data-reveal="soft">As imagens são <strong>renderizações dos projetos desenvolvidos</strong> pela nossa equipe — representações do projeto aprovado, não fotografias de obra concluída.</p>
+
+    <div class="cta-row" data-reveal>
+      <p class="cta-note">Gostou do que viu? Vamos desenhar o projeto da sua casa.</p>
+      <a class="btn" data-wa-btn="projetos">Solicitar orçamento <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAIXA 2 ============================== -->
+<section class="strip" aria-label="Interiores de projeto desenvolvido">
+  <div class="strip-media"><img src="assets/img/faixa-interior.webp" alt="Área gourmet integrada com bancada em pedra e marcenaria sob medida" width="1900" height="1069" loading="lazy" decoding="async"></div>
+  <div class="strip-body">
+    <div class="container">
+      <p class="q" data-reveal>Surgimos da vontade de unir a criatividade dos projetos arquitetônicos com a precisão da engenharia.</p>
+      <p class="src" data-reveal="soft">Projetos de interiores</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SOBRE (split invertido) ============================== -->
+<section class="sec sec--after-strip" id="sobre">
+  <div class="container">
+    <div class="split split--flip">
+      <figure class="split-fig" data-reveal="fig">
+        <img src="assets/img/split-sobre.webp" alt="Sala de estar integrada com marcenaria sob medida, projeto de interiores da Andraco" width="1200" height="800" loading="lazy" decoding="async">
+        <figcaption>Projeto de interiores · Apê Home</figcaption>
+      </figure>
+      <div class="split-body" data-rv="right" data-reveal>
+        <span class="eyebrow">Sobre nós</span>
+        <h2>Saiba mais sobre a Andraco Engenharia</h2>
+        <div class="prose">
+          <p>Fundada com o objetivo de valorizar ainda mais a engenharia civil e a arquitetura, atuamos há <strong>mais de 9 anos</strong> no mercado, somando <strong>mais de 12 anos</strong> de experiência prática em obra.</p>
+          <p>Surgimos da vontade de unir a criatividade dos projetos arquitetônicos com a precisão da engenharia, buscando sempre o melhor resultado.</p>
+          <p>Nossa missão é oferecer segurança patrimonial e melhorar a qualidade de vida das pessoas, entregando projetos que superam expectativas — seja em reformas rápidas ou em grandes empreendimentos.</p>
+        </div>
+        <ul class="checklist">
+          <li><svg width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Responsabilidade técnica sobre cada obra que assinamos</span></li>
+          <li><svg width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Mais de 70 projetos e obras entregues em 6 anos</span></li>
+          <li><svg width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Mais de 100 colaboradores parceiros mobilizados</span></li>
+          <li><svg width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Atendimento em Curitiba e região metropolitana</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAIXA 3 ============================== -->
+<section class="strip strip--tall" aria-label="Engenharia e arquitetura andando juntas">
+  <div class="strip-media"><img src="assets/img/faixa-entrega.webp" alt="Projeto Delta: casa térrea com cobertura inclinada entre árvores" width="1900" height="1069" loading="lazy" decoding="async"></div>
+  <div class="strip-body">
+    <div class="container">
+      <span class="eyebrow" data-reveal="soft">Nossos números</span>
+      <p class="q" data-reveal>Engenharia e arquitetura andando juntas.</p>
+      <p class="src" data-reveal="soft">Nossa equipe trabalha para que o design inovador que você sonha esteja sempre apoiado em soluções de engenharia confiáveis, seguras e de acordo com as normas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="sec sec--after-strip bg-paper" id="faq">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2>Tire suas dúvidas antes de começar</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details>
+        <summary><span class="q-n">01</span><span class="q-t">Vocês fazem só o projeto ou também executam a obra?</span><span class="q-i" aria-hidden="true"></span></summary>
+        <p class="faq-a">Os dois. Você pode contratar apenas o projeto arquitetônico, apenas a execução (se já tem projeto pronto) ou o pacote completo, com projeto executivo e gerenciamento da obra até a entrega das chaves.</p>
+      </details>
+      <details>
+        <summary><span class="q-n">02</span><span class="q-t">Como funciona a aprovação do financiamento?</span><span class="q-i" aria-hidden="true"></span></summary>
+        <p class="faq-a">Fazemos a análise completa do perfil, organizamos toda a documentação e buscamos a aprovação do crédito junto à Caixa Econômica antes mesmo do início do projeto — com conhecimento das diferentes faixas do Minha Casa Minha Vida.</p>
+      </details>
+      <details>
+        <summary><span class="q-n">03</span><span class="q-t">O orçamento pode mudar no meio da obra?</span><span class="q-i" aria-hidden="true"></span></summary>
+        <p class="faq-a">Trabalhamos com orçamento fechado e detalhado desde o início. No primeiro contato levantamos todas as informações para apresentar um valor claro antes de você decidir.</p>
+      </details>
+      <details>
+        <summary><span class="q-n">04</span><span class="q-t">Consigo ver como a casa vai ficar antes de construir?</span><span class="q-i" aria-hidden="true"></span></summary>
+        <p class="faq-a">Sim. A renderização 3D faz parte do nosso processo: você vê imagens realistas do projeto e valida cada decisão antes de a obra começar.</p>
+      </details>
+      <details>
+        <summary><span class="q-n">05</span><span class="q-t">Atendem reforma e ampliação, ou só obra nova?</span><span class="q-i" aria-hidden="true"></span></summary>
+        <p class="faq-a">Atendemos os dois. Reformas e ampliações seguem o mesmo padrão de controle e responsabilidade técnica das obras completas.</p>
+      </details>
+      <details>
+        <summary><span class="q-n">06</span><span class="q-t">Qual é o primeiro passo para começar?</span><span class="q-i" aria-hidden="true"></span></summary>
+        <p class="faq-a">É só falar com a gente pelo botão desta página. Em pouco tempo alguém da nossa equipe entra em contato para entender seu projeto e já apresentar os próximos passos.</p>
+      </details>
+    </div>
+    <div class="cta-row" data-reveal>
+      <p class="cta-note">Ainda com dúvidas? Fale direto com nossa equipe.</p>
+      <a class="btn" data-wa-btn="faq">Solicitar orçamento <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA FINAL ============================== -->
+<section class="sec bg-dark" id="contato">
+  <div class="container">
+    <div class="close">
+      <div class="close-lead" data-reveal>
+        <span class="eyebrow">Contato</span>
+        <h2>Somos a parceira ideal para atuar em todas as etapas da sua construção</h2>
+        <p class="lede">Entre em contato e veja como podemos financiar e construir sua casa.</p>
+        <a class="btn" data-wa-btn="contato">Solicitar orçamento <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="contacts">
+          <a href="tel:+5541984442181"><svg width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>(41) 9.8444-2181</a>
+          <a href="mailto:andraco.engenharia@gmail.com"><svg width="16" height="16" aria-hidden="true"><use href="#i-mail"/></svg>andraco.engenharia@gmail.com</a>
+          <a href="https://www.instagram.com/andraco.engenharia/" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true"><use href="#i-insta"/></svg>@andraco.engenharia</a>
+        </div>
+      </div>
+
+      <div data-reveal="soft">
+        <h3 class="close-aside__lbl">Como solicitar seu orçamento</h3>
+        <ol class="flow">
+          <li>
+            <span class="dot">01</span>
+            <h3>Fale com um engenheiro</h3>
+            <p>Você manda uma mensagem e conversa direto com quem vai conduzir o seu projeto.</p>
+          </li>
+          <li>
+            <span class="dot">02</span>
+            <h3>Entendemos o seu projeto</h3>
+            <p>Levantamos terreno, programa de necessidades, prazo e a viabilidade do financiamento.</p>
+          </li>
+          <li>
+            <span class="dot">03</span>
+            <h3>Receba o orçamento fechado</h3>
+            <p>Apresentamos o escopo e o valor detalhados antes de você decidir qualquer coisa.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="ftr">
+  <div class="pat-apex on-dark" aria-hidden="true"></div>
+  <div class="container">
+    <div class="ftr-top">
+      <div class="ftr-brand">
+        <img src="assets/logos/logo-white.png" alt="Andraco Engenharia" width="900" height="192" loading="lazy">
+        <p>Escritório de engenharia civil e arquitetura em Curitiba e região metropolitana. Projetos residenciais, execução de obras, reformas e ampliações.</p>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Consultoria em Projetos</a></li>
+          <li><a href="#servicos">Projetos Arquitetônicos</a></li>
+          <li><a href="#servicos">Renderizações 3D</a></li>
+          <li><a href="#servicos">Execução de Obras</a></li>
+          <li><a href="#servicos">Reformas e Ampliações</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+5541984442181">(41) 9.8444-2181</a></li>
+          <li><a href="mailto:andraco.engenharia@gmail.com">andraco.engenharia@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/andraco.engenharia/" target="_blank" rel="noopener">@andraco.engenharia</a></li>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <span>© <span data-year>2026</span> Andraco Engenharia. Todos os direitos reservados.</span>
+      <span>Desenvolvido por BuildV — Marketing para Engenharia e Construção Civil</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== LIGHTBOX ============================== -->
+<div class="lb" role="dialog" aria-modal="true" aria-label="Galeria do projeto" aria-hidden="true">
+  <div class="lb-bar">
+    <span class="lb-title">Projeto</span>
+    <span class="lb-idx">1 / 1</span>
+    <button class="lb-btn lb-close" type="button" aria-label="Fechar galeria"><svg width="16" height="16" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-btn lb-nav lb-prev" type="button" aria-label="Imagem anterior"><svg width="16" height="16" aria-hidden="true"><use href="#i-prev"/></svg></button>
+    <img alt="" hidden>
+    <button class="lb-btn lb-nav lb-next" type="button" aria-label="Próxima imagem"><svg width="16" height="16" aria-hidden="true"><use href="#i-next"/></svg></button>
+  </div>
+  <div class="lb-foot"></div>
+</div>
+
+<!-- ============================== COOKIES (LGPD) ============================== -->
+<aside class="ck" role="region" aria-label="Aviso de cookies">
+  <p>Usamos cookies para entender como o site é usado e melhorar sua experiência. Saiba mais na <a href="privacidade.html">Política de Privacidade</a>.</p>
+  <div class="ck-row">
+    <button class="btn" type="button" data-consent="granted">Aceitar cookies</button>
+    <button class="btn btn--ghost" type="button" data-consent="denied">Recusar</button>
+  </div>
+</aside>
+
+<!-- Merlin — popup de qualificação que encaminha o lead para o WhatsApp.
+     Os CTAs continuam sendo <a href="wa.me/..."> : se o Merlin não carregar,
+     o clique vai direto para o WhatsApp (ver js/app.js). -->
+<script src="https://scripts.gomerlin.com.br/merlin.js"></script>
+<script>
+  window.ANDRACO_MERLIN_POPUP = "https://tools.gomerlin.com.br/popup/b7c9b5c8-49f5-4ab4-9217-a836686fb99b";
+  if (window.Merlin && window.Merlin.Popup) {
+    window.Merlin.Popup.initFromSource(window.ANDRACO_MERLIN_POPUP);
+  }
+</script>
+<script src="js/motion.js" defer></script>
+<script src="js/app.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"GeneralContractor",
+  "name":"Andraco Engenharia",
+  "url":"https://andracoengenharia.com.br/",
+  "telephone":"+55-41-98444-2181",
+  "email":"andraco.engenharia@gmail.com",
+  "areaServed":"Curitiba e Região Metropolitana, PR",
+  "description":"Escritório de engenharia civil e arquitetura: consultoria em projetos, projetos arquitetônicos, renderizações 3D, projeto executivo, execução de obras e reformas.",
+  "sameAs":["https://www.instagram.com/andraco.engenharia/"]
+}
+</script>
+</body>
+</html>
