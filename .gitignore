@@ -1,0 +1,29 @@
+# ---- material-fonte: fica local + Drive, nunca no git ----
+_raw/
+imagens/
+Marca/
+Copys/
+site antigo/
+brief-pack.md
+design-system/
+Site/
+
+# ---- segredos ----
+*.env
+.env*
+db-config.php
+!db-config.example.php
+*.pem
+*.key
+secrets*.json
+
+# ---- ruído de SO / editor ----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+node_modules/
+__pycache__/
+*.pyc

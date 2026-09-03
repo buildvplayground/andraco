@@ -1,0 +1,247 @@
+{
+  "projeto": "andraco",
+  "cliente": "Andraco Engenharia",
+  "slug": "andraco-site",
+  "setor": "Engenharia civil e arquitetura — construção residencial",
+  "criado_em": "2026-09-03",
+  "atualizado_em": "2026-09-03",
+  "etapa_atual": 8,
+  "etapa_atual_nome": "Revisão humana (gate)",
+  "etapas": [
+    {
+      "n": 1,
+      "nome": "Extrair material",
+      "status": "done",
+      "nota": "Pasta OFICIAL do Drive (1Gk9K5Xh...) baixada via rclone: brandbook, 6 icones de servico, 15 projetos de fachada nomeados, 7 colecoes de interiores, 7 imagens da jornada, numeros de autoridade. 352MB, 123 arquivos."
+    },
+    {
+      "n": 2,
+      "nome": "Organizar pastas",
+      "status": "done",
+      "nota": "_raw/drive/, Marca/ (logos+icones oficiais), Copys/, imagens/tratadas/, design-system/, Site/"
+    },
+    {
+      "n": "2b",
+      "nome": "Repositório GitHub",
+      "status": "pending",
+      "nota": "A pasta nao e um repo git e o gh nao foi acionado. Ver pendencia P6."
+    },
+    {
+      "n": 3,
+      "nome": "Design system",
+      "status": "done",
+      "nota": "Paleta MONOCROMATICA do brandbook (#272727 #4E555E #80858B #CDD6DF #D9D9D9 + preto e branco). SEM acento cromatico. Tipografia Alfa Slab One (oficial) + Archivo (substituta da Lastica). 4 patterns de marca. Contrastes medidos: 0 pares abaixo do AA."
+    },
+    {
+      "n": 4,
+      "nome": "Copy estruturada",
+      "status": "done",
+      "nota": "Copy do site antigo mantida (headline, voz, estrutura de secao) com conteudo adaptado ao material oficial: 6 servicos reais com icone, 5 numeros de autoridade, 15 projetos nomeados, 7 etapas com imagem. Ver Copys/institucional_v2_adaptado.md."
+    },
+    {
+      "n": 5,
+      "nome": "Front-end",
+      "status": "done",
+      "nota": "3 paginas. 15 projetos com galeria de 3 imagens cada. 6 icones oficiais em selo com grade de prancheta. Jornada de 7 etapas com foto real em P&B. Auditoria adversarial sem achados."
+    },
+    {
+      "n": 6,
+      "nome": "Ajustes finais",
+      "status": "done",
+      "nota": "webp: 175,7MB -> 9,71MB (-94,5%). Overflow 0px em 11 larguras de 320 a 1920."
+    },
+    {
+      "n": 7,
+      "nome": "Tags e módulos",
+      "status": "done",
+      "nota": "GTM-P6RVST79 + Consent Mode v2 + Merlin (popup b7c9b5c8) com fallback wa.me + banner LGPD + Politica de Privacidade. Verificado nas 3 paginas e na saida do tema WP."
+    },
+    {
+      "n": 8,
+      "nome": "Revisão humana",
+      "status": "doing",
+      "nota": "Preview local servido. Aguarda olhar do usuario e aprovacao para o deploy."
+    },
+    {
+      "n": 9,
+      "nome": "Deploy",
+      "status": "blocked",
+      "nota": "deploy-vercel/ e deploy-wordpress/ prontos e verificados. Falta dominio/hospedagem e o repo."
+    }
+  ],
+  "entregaveis": {
+    "site": {
+      "arquivo": "Site/index.html",
+      "rota": "/",
+      "papel": "Versão A do teste A/B (site institucional reestruturado)"
+    },
+    "lp": {
+      "arquivo": "Site/residencial.html",
+      "rota": "/residencial",
+      "papel": "Versão B do teste A/B (LP Construção Residencial)",
+      "robots": "noindex, follow"
+    },
+    "privacidade": {
+      "arquivo": "Site/privacidade.html",
+      "rota": "/privacidade"
+    },
+    "deploy_vercel": "deploy-vercel/ (Root Directory = deploy-vercel, Framework = Other)",
+    "deploy_wordpress": "deploy-wordpress/andraco-engenharia/ (tema; 3 templates)"
+  },
+  "rastreamento": {
+    "gtm": "GTM-P6RVST79",
+    "consent_mode": "v2 — default denied, update no aceite do banner",
+    "evento_consentimento": "consent_update (dataLayer)",
+    "evento_cta": "cta_click { cta_secao, cta_destino, cta_pagina }",
+    "merlin_popup": "https://tools.gomerlin.com.br/popup/b7c9b5c8-49f5-4ab4-9217-a836686fb99b",
+    "whatsapp_fallback": "5541984442181"
+  },
+  "verificacao": {
+    "overflow_horizontal_px": 0,
+    "larguras_testadas": [
+      320,
+      360,
+      375,
+      414,
+      560,
+      768,
+      900,
+      1024,
+      1200,
+      1440,
+      1920
+    ],
+    "contraste_pares_abaixo_AA": 0,
+    "achados_bloqueantes": 0,
+    "php_lint_erros": 0,
+    "suites_no_tema_wordpress": "audit + contraste + interacoes + tags — todas OK",
+    "bugs_corrigidos": 14,
+    "imagens": "175,7MB -> 9,71MB (-94,5%)"
+  },
+  "pendencias": [
+    {
+      "id": "P1",
+      "titulo": "Confirmar o WhatsApp comercial",
+      "detalhe": "Os CTAs usam wa.me/5541984442181, número publicado no site atual. Se mudou, trocar a constante WA_NUMBER no topo de js/app.js (único lugar).",
+      "responsavel": "cliente",
+      "bloqueia_deploy": false
+    },
+    {
+      "id": "P2",
+      "titulo": "AW-1234 no GTM não é um ID de Google Ads válido",
+      "detalhe": "O container GTM-P6RVST79 dispara uma tag de Ads com tid=AW-1234, que parece placeholder. Conferir e corrigir dentro do GTM — conversões de Ads não estão sendo registradas.",
+      "responsavel": "usuario",
+      "bloqueia_deploy": false
+    },
+    {
+      "id": "P3",
+      "titulo": "Pixel do LinkedIn dispara antes do consentimento",
+      "detalhe": "O Consent Mode do Google não governa tags de terceiros. Usar o evento consent_update (já emitido no dataLayer) como gatilho da tag do LinkedIn no GTM.",
+      "responsavel": "usuario",
+      "bloqueia_deploy": false
+    },
+    {
+      "id": "P4",
+      "titulo": "Definir domínio e hospedagem",
+      "detalhe": "Vercel: importar repo com Root Directory = deploy-vercel, Framework = Other. WordPress: subir deploy-wordpress/andraco-engenharia como tema e criar as páginas com os slugs residencial e privacidade.",
+      "responsavel": "usuario",
+      "bloqueia_deploy": true
+    },
+    {
+      "id": "P6",
+      "titulo": "Criar o repositório GitHub",
+      "detalhe": "dev-buildv/andraco-site privado, versionando só a pasta de deploy + PROJETO.md + state.json. A pasta atual não é um repo git.",
+      "responsavel": "usuario",
+      "bloqueia_deploy": true
+    },
+    {
+      "id": "P7",
+      "titulo": "Confirmar o e-mail público",
+      "detalhe": "andraco.engenharia@gmail.com foi decodificado da proteção Cloudflare do site atual. Confirmar se é o canal de contato oficial.",
+      "responsavel": "cliente",
+      "bloqueia_deploy": false
+    },
+    {
+      "id": "P8",
+      "titulo": "Fotos de obra entregue",
+      "detalhe": "Todo o material visual é render de projeto — a seção é honestamente rotulada 'Projetos desenvolvidos', com nota explícita. Fotos de obra concluída mudariam o patamar da prova social.",
+      "responsavel": "cliente",
+      "bloqueia_deploy": false
+    },
+    {
+      "id": "P9",
+      "titulo": "Confirmar noindex na LP",
+      "detalhe": "A LP está noindex,follow para não canibalizar a home no orgânico (é teste em tráfego pago). Reversível se a intenção for indexar.",
+      "responsavel": "usuario",
+      "bloqueia_deploy": false
+    },
+    {
+      "id": "P10",
+      "titulo": "Licenciar a fonte Lastica (ou aprovar a substituta)",
+      "detalhe": "O brandbook especifica LASTICA para texto. E fonte licenciada e nao esta no Google Fonts. O site usa Archivo, a grotesca larga mais proxima. Para fidelidade total, licenciar a Lastica e hospedar como webfont (trocar --ff-body no styles.css). Alfa Slab One, do display, e a oficial mesmo.",
+      "responsavel": "usuario",
+      "bloqueia_deploy": false
+    },
+    {
+      "id": "P11",
+      "titulo": "Confirmar a categoria de cada projeto do portfolio",
+      "detalhe": "Os 15 projetos usam os nomes reais do Drive. A categoria mostrada ('Residencial' / 'Alto padrao') foi inferida da imagem, nao ha metadado. Cidade e ano de entrega, se existirem, aumentariam a forca da prova.",
+      "responsavel": "cliente",
+      "bloqueia_deploy": false
+    },
+    {
+      "id": "P12",
+      "titulo": "Material do Drive ainda nao aproveitado",
+      "detalhe": "Baixado mas nao usado: PORTFOLIO ANDRACO.pdf, MENU DE SERVICOS - PLAYBOOK.pdf, MENU DE REFORMAS PACOTES.pdf, SITE INSPIRACAO.pdf, RELATORIOS FANTHOM (10 PDFs), PALAVRAS CHAVES.docx (47 termos de SEO), Concorrentes diretos.docx e as 7 colecoes de PROJETOS INTERIORES (39 imagens, das quais 3 foram usadas). Pode virar paginas de servico, secao de interiores ou conteudo de SEO numa proxima rodada.",
+      "responsavel": "usuario",
+      "bloqueia_deploy": false
+    }
+  ],
+  "links": {
+    "site_atual": "https://andracoengenharia.com.br/",
+    "drive_copy_lp": "https://drive.google.com/drive/folders/1-rAyvd-SvdSXBNd6vuFmG-BKrgdXigLM",
+    "preview_site": "http://127.0.0.1:8850/",
+    "preview_lp": "http://127.0.0.1:8850/residencial.html",
+    "preview_privacidade": "http://127.0.0.1:8850/privacidade.html",
+    "repo": null,
+    "dominio": null
+  },
+  "marca": {
+    "paleta": [
+      "#272727",
+      "#4E555E",
+      "#80858B",
+      "#CDD6DF",
+      "#D9D9D9",
+      "#FFFFFF",
+      "#000000"
+    ],
+    "acento_cromatico": null,
+    "display": "Alfa Slab One (oficial, Google Fonts)",
+    "texto": "Archivo (substituta da Lastica — ver P10)",
+    "icones_servico": 6,
+    "patterns": [
+      "pat-grid",
+      "pat-hatch",
+      "pat-apex",
+      "pat-rule"
+    ]
+  },
+  "projetos_portfolio": [
+    "Outbox",
+    "Luxor",
+    "Sakkara",
+    "Hórus",
+    "Andirá",
+    "Ísis",
+    "Akhenaton",
+    "Delta",
+    "Vértice",
+    "Ventus",
+    "Gaia",
+    "Infinity",
+    "Solarium",
+    "Estela",
+    "Neo"
+  ]
+}
