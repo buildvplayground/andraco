@@ -821,6 +821,9 @@ body.overlay-open .ck{display:none}   /* não competir com o menu/lightbox */
 .ck p a{color:#fff;text-decoration:underline;text-underline-offset:2px}
 .ck-row{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
 .ck .btn{padding:11px 18px;font-size:.875rem}
+.ck-fins{list-style:none;margin:12px 0 0;padding:12px 0 0;border-top:1px solid rgba(205,214,223,.22);display:grid;gap:6px;font-size:var(--fs-small);color:var(--on-dark-muted)}
+.ck-fins[hidden]{display:none}
+.ck-fins strong{color:var(--on-dark);font-weight:600}
 
 /* ==========================================================================
    25. Responsivo — ZERO overflow horizontal de 320px a desktop
@@ -911,7 +914,7 @@ body.overlay-open .ck{display:none}   /* não competir com o menu/lightbox */
   .faq-a{padding-left:40px;padding-right:0}
 
   .ck{left:10px;right:10px;bottom:10px;padding:16px 18px}
-  .ck p{font-size:.875rem;line-height:1.5}
+  .ck p,.ck-fins{font-size:.875rem;line-height:1.5}
   .ck-row{gap:8px}
   .ck .btn{flex:1 1 auto;justify-content:center;padding:11px 12px}
   /* uma decisão por vez: em telas estreitas o balão do Merlin e o banner de

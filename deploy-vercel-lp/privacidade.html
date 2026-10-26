@@ -11,29 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Sans:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=2">
 
-<!-- Consent Mode v2 — tudo negado até o visitante escolher no banner (LGPD).
-     Precisa rodar ANTES do GTM, senão as tags disparam antes do consentimento. -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('consent','default',{
-    ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied',
-    analytics_storage:'denied',
-    functionality_storage:'granted', security_storage:'granted',
-    wait_for_update: 500
-  });
-  /* visitante que já aceitou antes: libera na carga, sem esperar novo clique */
-  try {
-    if (localStorage.getItem('andraco_consent_v1') === 'granted') {
-      gtag('consent','update',{
-        ad_storage:'granted', ad_user_data:'granted',
-        ad_personalization:'granted', analytics_storage:'granted'
-      });
-    }
-  } catch (e) { /* modo privado: segue negado */ }
-</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
 var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
@@ -72,20 +51,21 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
       <p>Este site <strong>não possui formulários de cadastro</strong>. Os dados que chegam até nós são:</p>
       <ul>
         <li><strong>Dados que você nos envia por vontade própria</strong> ao clicar em um botão de contato e iniciar uma conversa por WhatsApp, telefone ou e-mail — normalmente nome, telefone e informações sobre o projeto que você quer construir.</li>
-        <li><strong>Dados de navegação</strong>, coletados por cookies e tecnologias similares apenas se você consentir: páginas visitadas, tempo de permanência, origem do acesso, tipo de dispositivo e navegador, e endereço IP (em forma abreviada, quando a ferramenta permitir).</li>
+        <li><strong>Dados de navegação</strong>, coletados por cookies de análise e de publicidade (veja “Cookies”, abaixo): páginas visitadas, tempo de permanência, origem do acesso, tipo de dispositivo e navegador, e endereço IP (em forma abreviada, quando a ferramenta permitir).</li>
       </ul>
 
       <h2>3. Para que usamos esses dados</h2>
       <ul>
         <li>Responder ao seu contato e elaborar o orçamento solicitado (base legal: execução de contrato ou procedimentos preliminares — art. 7º, V).</li>
-        <li>Analisar de forma agregada como o site é usado, para melhorá-lo (base legal: consentimento — art. 7º, I).</li>
-        <li>Mensurar a eficácia de campanhas de divulgação (base legal: consentimento).</li>
+        <li>Analisar de forma agregada como o site é usado, para melhorá-lo (base legal: legítimo interesse em medir a audiência do site — art. 7º, IX).</li>
+        <li>Mensurar a eficácia de campanhas de divulgação e mostrar anúncios da Andraco Engenharia a quem já visitou o site (base legal: legítimo interesse em divulgar os nossos serviços — art. 7º, IX).</li>
         <li>Cumprir obrigações legais e regulatórias quando aplicável (art. 7º, II).</li>
       </ul>
       <p>Não usamos seus dados para decisões automatizadas e <strong>não vendemos dados pessoais</strong> a terceiros.</p>
 
       <h2>4. Cookies</h2>
-      <p>Ao entrar no site você vê um aviso e escolhe se aceita cookies de análise e de marketing. <strong>Cookies estritamente necessários</strong> para o funcionamento da página são usados sempre, pois sem eles o site não opera. Se você recusar, nenhuma etiqueta de análise ou de publicidade é ativada — a escolha fica guardada no seu navegador e pode ser alterada limpando os dados do site.</p>
+      <p>Usamos três tipos de cookies. <strong>Essenciais</strong> fazem o site funcionar. <strong>De análise</strong> (Google Analytics e Microsoft Clarity) mostram quais páginas e botões são usados. <strong>De publicidade</strong> (Google Ads, Meta e LinkedIn) permitem mostrar anúncios da Andraco Engenharia a quem já visitou o site. O aviso de cookies, exibido na primeira visita, resume essas finalidades no botão “Ver finalidades”.</p>
+      <p>Para se opor ao uso de cookies de análise e de publicidade, bloqueie ou apague os cookies nas configurações do seu navegador e ajuste as suas preferências de anúncios nas páginas do <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google</a>, da <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">Meta</a> e do <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out" target="_blank" rel="noopener">LinkedIn</a>.</p>
 
       <h2>5. Com quem compartilhamos</h2>
       <p>Podemos compartilhar dados estritamente necessários com:</p>
@@ -136,6 +116,6 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
     window.Merlin.Popup.initFromSource(window.ANDRACO_MERLIN_POPUP);
   }
 </script>
-<script src="js/app.js" defer></script>
+<script src="js/app.js?v=2" defer></script>
 </body>
 </html>

@@ -43,10 +43,10 @@ Ou, pela CLI: `cd deploy-vercel-site && vercel --prod`
 | Google Tag Manager | `GTM-P6RVST79` |
 | Popup Merlin | `.../popup/b7c9b5c8-49f5-4ab4-9217-a836686fb99b` |
 
-**Consent Mode v2 (LGPD).** Antes do GTM, tudo entra como `denied`. O banner
-dispara `gtag('consent','update', …)` no aceite e também empilha o evento próprio
-`consent_update` no `dataLayer` — use esse evento como gatilho no GTM para as tags
-**não-Google** (o Consent Mode só governa as do Google).
+**Aviso de cookies (LGPD).** O GTM carrega no carregamento da página, sem Consent
+Mode e sem gate. O banner é só informativo: "Entendi" grava
+`localStorage cookie_notice = 'ok'` e "Ver finalidades" abre a lista (Essenciais,
+Análise, Publicidade). Não há evento de consentimento no `dataLayer`.
 
 **CTAs.** Todo botão é um `<a href="wa.me/5541984442181">` de verdade:
 Merlin carregou → abre o popup de qualificação; Merlin não carregou → o link

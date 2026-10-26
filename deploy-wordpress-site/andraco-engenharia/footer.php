@@ -58,10 +58,15 @@
 
 <!-- ============================== COOKIES (LGPD) ============================== -->
 <aside class="ck" role="region" aria-label="Aviso de cookies">
-  <p>Usamos cookies para entender como o site é usado e melhorar sua experiência. Saiba mais na <a href="<?php echo esc_url( andraco_url( 'privacidade' ) ); ?>">Política de Privacidade</a>.</p>
+  <p>Usamos cookies para o site funcionar, medir a audiência e mostrar anúncios a quem já nos visitou. Saiba mais na <a href="<?php echo esc_url( andraco_url( 'privacidade' ) ); ?>">Política de Privacidade</a>.</p>
+  <ul class="ck-fins" id="ck-fins" data-cookie-fins hidden>
+    <li><strong>Essenciais:</strong> fazem o site funcionar.</li>
+    <li><strong>Análise:</strong> Google Analytics e Microsoft Clarity, para saber quais páginas e botões funcionam.</li>
+    <li><strong>Publicidade:</strong> Google Ads, Meta e LinkedIn, para mostrar anúncios a quem já visitou o site.</li>
+  </ul>
   <div class="ck-row">
-    <button class="btn" type="button" data-consent="granted">Aceitar cookies</button>
-    <button class="btn btn--ghost" type="button" data-consent="denied">Recusar</button>
+    <button class="btn" type="button" data-cookie-ok>Entendi</button>
+    <button class="btn btn--ghost" type="button" data-cookie-more aria-expanded="false" aria-controls="ck-fins">Ver finalidades</button>
   </div>
 </aside>
 

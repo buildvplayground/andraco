@@ -9,7 +9,7 @@ biblioteca de animação — o mesmo HTML/CSS/JS validado da versão estática.
 ```
 andraco-engenharia/
 ├── style.css                cabeçalho do tema + todo o CSS (inclui os 4 patterns)
-├── functions.php            enqueue, GTM + Consent Mode, Merlin, redirects, favicon
+├── functions.php            enqueue, GTM, Merlin, redirects, favicon
 ├── inc/svg-sprite.php       sprite de ícones de interface
 ├── header.php  footer.php   cabeçalho com nav completa + rodapé
 ├── header-doc.php  footer-doc.php
@@ -36,7 +36,6 @@ andraco-engenharia/
 | Item | Onde |
 |---|---|
 | GTM + `noscript` | `andraco_gtm_head()` / `andraco_gtm_noscript()` |
-| Consent Mode v2 | `andraco_gtm_head()`, prioridade 0 no `wp_head` |
 | Merlin | enfileirado como dependência do `app.js` (garante a ordem) |
 | Galeria de cada projeto | `andraco_gallery( slug, total )` monta o `data-gallery` |
 | Redirects 301 de `/financiamento`, `/projetos`, `/execucao-e-reforma` | `andraco_legacy_redirects()` |
@@ -57,8 +56,8 @@ andraco-engenharia/
 - **Nenhum plugin de cache que reordene ou combine scripts.** O Merlin precisa
   rodar antes do `app.js`. O site anterior usava LiteSpeed com
   `type="litespeed/javascript"`, que atrasava os dois.
-- **Nenhum plugin de consentimento de cookies** — o tema já tem banner + Consent
-  Mode v2; dois sistemas se anulam.
+- **Nenhum plugin de consentimento de cookies** — o tema já tem o aviso de cookies;
+  dois sistemas se atrapalham.
 - **Não introduza cor de acento.** A marca é monocromática por definição do
   brandbook; a hierarquia vem de textura, inversão e escala.
 
@@ -69,10 +68,10 @@ andraco-engenharia/
 | Google Tag Manager | `GTM-P6RVST79` |
 | Popup Merlin | `.../popup/b7c9b5c8-49f5-4ab4-9217-a836686fb99b` |
 
-**Consent Mode v2 (LGPD).** Antes do GTM, tudo entra como `denied`. O banner
-dispara `gtag('consent','update', …)` no aceite e também empilha o evento próprio
-`consent_update` no `dataLayer` — use esse evento como gatilho no GTM para as tags
-**não-Google** (o Consent Mode só governa as do Google).
+**Aviso de cookies (LGPD).** O GTM carrega no carregamento da página, sem Consent
+Mode e sem gate. O banner é só informativo: "Entendi" grava
+`localStorage cookie_notice = 'ok'` e "Ver finalidades" abre a lista (Essenciais,
+Análise, Publicidade). Não há evento de consentimento no `dataLayer`.
 
 **CTAs.** Todo botão é um `<a href="wa.me/5541984442181">` de verdade:
 Merlin carregou → abre o popup de qualificação; Merlin não carregou → o link

@@ -7,7 +7,7 @@ ou domínio próprio e rodar o teste independente do site principal.
 ```
 andraco-lp/
 ├── style.css                "Andraco Engenharia — LP Construcao Residencial"
-├── functions.php            enqueue, GTM + Consent Mode, Merlin, favicon
+├── functions.php            enqueue, GTM, Merlin, favicon
 │                            (sem os redirects legados do site institucional)
 ├── inc/svg-sprite.php
 ├── header-lp.php  footer-lp.php    cabeçalho enxuto (logo + CTA) e rodapé curto
@@ -63,7 +63,7 @@ Os dois temas mandam para o mesmo `GTM-P6RVST79`. Para separar as versões, use 
 ## Atenção
 
 - **Nenhum plugin de cache que reordene scripts** (o Merlin roda antes do `app.js`).
-- **Nenhum plugin de consentimento** — já há banner + Consent Mode v2.
+- **Nenhum plugin de consentimento** — o tema já tem o aviso de cookies.
 
 ## Rastreamento (idêntico nos dois pacotes)
 
@@ -72,10 +72,10 @@ Os dois temas mandam para o mesmo `GTM-P6RVST79`. Para separar as versões, use 
 | Google Tag Manager | `GTM-P6RVST79` |
 | Popup Merlin | `.../popup/b7c9b5c8-49f5-4ab4-9217-a836686fb99b` |
 
-**Consent Mode v2 (LGPD).** Antes do GTM, tudo entra como `denied`. O banner
-dispara `gtag('consent','update', …)` no aceite e também empilha o evento próprio
-`consent_update` no `dataLayer` — use esse evento como gatilho no GTM para as tags
-**não-Google** (o Consent Mode só governa as do Google).
+**Aviso de cookies (LGPD).** O GTM carrega no carregamento da página, sem Consent
+Mode e sem gate. O banner é só informativo: "Entendi" grava
+`localStorage cookie_notice = 'ok'` e "Ver finalidades" abre a lista (Essenciais,
+Análise, Publicidade). Não há evento de consentimento no `dataLayer`.
 
 **CTAs.** Todo botão é um `<a href="wa.me/5541984442181">` de verdade:
 Merlin carregou → abre o popup de qualificação; Merlin não carregou → o link
