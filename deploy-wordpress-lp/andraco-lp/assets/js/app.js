@@ -234,47 +234,30 @@
     }, true);
   }
 
-  /* --------------------------------------------- Banner de cookies (LGPD) */
+  /* ------- Aviso de cookies (LGPD, informativo: as tags disparam desde o carregamento) */
   var ck = document.querySelector(".ck");
   if (ck) {
-    var KEY = "andraco_consent_v1";
-    window.dataLayer = window.dataLayer || [];
+    var KEY = "cookie_notice";
+    var fins = ck.querySelector("[data-cookie-fins]");
+    var more = ck.querySelector("[data-cookie-more]");
+    var finsOpen = function (open) {
+      if (!fins || !more) return;
+      fins.hidden = !open;
+      more.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    var seen = null;
+    try { seen = localStorage.getItem(KEY); } catch (err) { /* modo privado */ }
 
-    function emit(state) {
-      // 1) Consent Mode v2 — é o que realmente libera/bloqueia as tags do Google
-      if (typeof window.gtag === "function") {
-        window.gtag("consent", "update", {
-          ad_storage: state,
-          ad_user_data: state,
-          ad_personalization: state,
-          analytics_storage: state
-        });
-      }
-      // 2) evento próprio, para acionar tags não-Google dentro do GTM
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "consent_update",
-        consent_analytics: state,
-        consent_marketing: state
-      });
-    }
-    var saved = null;
-    try { saved = localStorage.getItem(KEY); } catch (err) { /* modo privado */ }
-
-    if (saved) {
-      emit(saved);
-    } else {
+    if (seen !== "ok") {
       setTimeout(function () {
         ck.classList.add("open");
         document.body.classList.add("consent-pending");
       }, 1200);
     }
     ck.addEventListener("click", function (e) {
-      var b = e.target.closest("[data-consent]");
-      if (!b) return;
-      var state = b.getAttribute("data-consent");   // "granted" | "denied"
-      try { localStorage.setItem(KEY, state); } catch (err) { /* segue sem persistir */ }
-      emit(state);
+      if (e.target.closest("[data-cookie-more]")) { finsOpen(fins.hidden); return; }
+      if (!e.target.closest("[data-cookie-ok]")) return;
+      try { localStorage.setItem(KEY, "ok"); } catch (err) { /* segue sem persistir */ }
       ck.classList.remove("open");
       document.body.classList.remove("consent-pending");
     });

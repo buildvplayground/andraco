@@ -22,20 +22,21 @@ get_header( 'doc' );
       <p>Este site <strong>não possui formulários de cadastro</strong>. Os dados que chegam até nós são:</p>
       <ul>
         <li><strong>Dados que você nos envia por vontade própria</strong> ao clicar em um botão de contato e iniciar uma conversa por WhatsApp, telefone ou e-mail — normalmente nome, telefone e informações sobre o projeto que você quer construir.</li>
-        <li><strong>Dados de navegação</strong>, coletados por cookies e tecnologias similares apenas se você consentir: páginas visitadas, tempo de permanência, origem do acesso, tipo de dispositivo e navegador, e endereço IP (em forma abreviada, quando a ferramenta permitir).</li>
+        <li><strong>Dados de navegação</strong>, coletados por cookies de análise e de publicidade (veja “Cookies”, abaixo): páginas visitadas, tempo de permanência, origem do acesso, tipo de dispositivo e navegador, e endereço IP (em forma abreviada, quando a ferramenta permitir).</li>
       </ul>
 
       <h2>3. Para que usamos esses dados</h2>
       <ul>
         <li>Responder ao seu contato e elaborar o orçamento solicitado (base legal: execução de contrato ou procedimentos preliminares — art. 7º, V).</li>
-        <li>Analisar de forma agregada como o site é usado, para melhorá-lo (base legal: consentimento — art. 7º, I).</li>
-        <li>Mensurar a eficácia de campanhas de divulgação (base legal: consentimento).</li>
+        <li>Analisar de forma agregada como o site é usado, para melhorá-lo (base legal: legítimo interesse em medir a audiência do site — art. 7º, IX).</li>
+        <li>Mensurar a eficácia de campanhas de divulgação e mostrar anúncios da Andraco Engenharia a quem já visitou o site (base legal: legítimo interesse em divulgar os nossos serviços — art. 7º, IX).</li>
         <li>Cumprir obrigações legais e regulatórias quando aplicável (art. 7º, II).</li>
       </ul>
       <p>Não usamos seus dados para decisões automatizadas e <strong>não vendemos dados pessoais</strong> a terceiros.</p>
 
       <h2>4. Cookies</h2>
-      <p>Ao entrar no site você vê um aviso e escolhe se aceita cookies de análise e de marketing. <strong>Cookies estritamente necessários</strong> para o funcionamento da página são usados sempre, pois sem eles o site não opera. Se você recusar, nenhuma etiqueta de análise ou de publicidade é ativada — a escolha fica guardada no seu navegador e pode ser alterada limpando os dados do site.</p>
+      <p>Usamos três tipos de cookies. <strong>Essenciais</strong> fazem o site funcionar. <strong>De análise</strong> (Google Analytics e Microsoft Clarity) mostram quais páginas e botões são usados. <strong>De publicidade</strong> (Google Ads, Meta e LinkedIn) permitem mostrar anúncios da Andraco Engenharia a quem já visitou o site. O aviso de cookies, exibido na primeira visita, resume essas finalidades no botão “Ver finalidades”.</p>
+      <p>Para se opor ao uso de cookies de análise e de publicidade, bloqueie ou apague os cookies nas configurações do seu navegador e ajuste as suas preferências de anúncios nas páginas do <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google</a>, da <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">Meta</a> e do <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out" target="_blank" rel="noopener">LinkedIn</a>.</p>
 
       <h2>5. Com quem compartilhamos</h2>
       <p>Podemos compartilhar dados estritamente necessários com:</p>

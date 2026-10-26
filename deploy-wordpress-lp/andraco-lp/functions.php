@@ -128,34 +128,15 @@ function andraco_assets() {
 add_action( 'wp_enqueue_scripts', 'andraco_assets' );
 
 /**
- * Consent Mode v2 + Google Tag Manager.
+ * Google Tag Manager.
  *
- * Ordem é o que importa aqui: o `consent default` (tudo negado) tem de rodar
- * ANTES do snippet do GTM, senão as tags disparam antes do consentimento.
- * Por isso vai em `wp_head` com prioridade 0, e não como script enfileirado.
+ * Carrega no carregamento da página (o aviso de cookies é só informativo).
+ * Vai em `wp_head` com prioridade 0, e não como script enfileirado, para o
+ * container subir o mais cedo possível.
  */
 function andraco_gtm_head() {
 	$gtm = ANDRACO_GTM_ID;
 	?>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('consent','default',{
-    ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied',
-    analytics_storage:'denied',
-    functionality_storage:'granted', security_storage:'granted',
-    wait_for_update: 500
-  });
-  /* visitante que já aceitou antes: libera na carga, sem esperar novo clique */
-  try {
-    if (localStorage.getItem('andraco_consent_v1') === 'granted') {
-      gtag('consent','update',{
-        ad_storage:'granted', ad_user_data:'granted',
-        ad_personalization:'granted', analytics_storage:'granted'
-      });
-    }
-  } catch (e) { /* modo privado: segue negado */ }
-</script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
 var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
 j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})
