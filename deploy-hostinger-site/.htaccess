@@ -9,6 +9,9 @@ DirectoryIndex index.html index.php
 RewriteEngine On
 RewriteBase /
 
+# Validação do certificado (Let's Encrypt da Hostinger): passa direto, sem redirecionar
+RewriteRule ^\.well-known/ - [L]
+
 # https: a Cloudflare manda X-Forwarded-Proto, o que evita loop no SSL Flexible
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
