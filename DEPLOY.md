@@ -89,7 +89,7 @@ Checado por script, não por inspeção visual:
 
 O site e a LP saíram da Vercel e passaram a ser servidos pela hospedagem Hostinger
 do cliente. O deploy é automático pelo workflow `.github/workflows/deploy-hostinger.yml`
-(FTP, só o que mudou), a cada push no `main` que mexa nestas pastas:
+(SFTP na porta 65002; o FTP da Hostinger derruba a conexão de dados vinda do GitHub), a cada push no `main` que mexa nestas pastas:
 
 | Pasta | Destino | Origem do conteúdo |
 |---|---|---|
