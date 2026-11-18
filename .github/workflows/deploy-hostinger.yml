@@ -5,6 +5,7 @@ name: Deploy para Hostinger
 #   deploy-hostinger-lp/   -> lp.andracoengenharia.com.br  (LP)
 # Secrets do repositório: FTP_HOST (só o IP), FTP_USER e FTP_PASSWORD da conta principal
 # (na Hostinger a senha do FTP principal é a mesma do SSH).
+# O acesso SSH precisa estar ATIVO no hPanel (Avançado > Acesso SSH).
 # Por que SFTP e não FTP: o servidor aceita o login FTP, mas derruba a conexão de dados
 # vinda do GitHub (ECONNRESET), tanto em FTPS quanto em FTP simples.
 # Sem --delete: nada que já está no servidor é apagado (pastas pagina-*, backup etc.).
@@ -40,11 +41,7 @@ jobs:
           FTP_USER: ${{ secrets.FTP_USER }}
           LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -p "$SFTP_PORT" -u "$FTP_USER" --env-password "sftp://$FTP_HOST" -e "
-            set sftp:auto-confirm yes; set net:max-retries 3; set net:timeout 30;
-            mirror -R --verbose --parallel=4 --exclude-glob .git* --exclude-glob .DS_Store
-              deploy-hostinger-site/ domains/andracoengenharia.com.br/public_html/;
-            bye"
+          lftp -p "$SFTP_PORT" -u "$FTP_USER" --env-password "sftp://$FTP_HOST" -e "set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 30; mirror -R --verbose --parallel=4 --exclude-glob .git* --exclude-glob .DS_Store deploy-hostinger-site/ domains/andracoengenharia.com.br/public_html/; bye"
 
       - name: LP (lp.andracoengenharia.com.br)
         env:
@@ -52,8 +49,4 @@ jobs:
           FTP_USER: ${{ secrets.FTP_USER }}
           LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -p "$SFTP_PORT" -u "$FTP_USER" --env-password "sftp://$FTP_HOST" -e "
-            set sftp:auto-confirm yes; set net:max-retries 3; set net:timeout 30;
-            mirror -R --verbose --parallel=4 --exclude-glob .git* --exclude-glob .DS_Store
-              deploy-hostinger-lp/ domains/andracoengenharia.com.br/public_html/lp/;
-            bye"
+          lftp -p "$SFTP_PORT" -u "$FTP_USER" --env-password "sftp://$FTP_HOST" -e "set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 30; mirror -R --verbose --parallel=4 --exclude-glob .git* --exclude-glob .DS_Store deploy-hostinger-lp/ domains/andracoengenharia.com.br/public_html/lp/; bye"
