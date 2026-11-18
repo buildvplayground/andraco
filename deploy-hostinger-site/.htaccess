@@ -19,8 +19,15 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
 # Páginas antigas do WordPress
+# (com query, ela vai antes do #, senão a UTM do anúncio se perde)
+RewriteCond %{QUERY_STRING} .
+RewriteRule ^financiamento/?$ https://%{HTTP_HOST}/?%{QUERY_STRING}#financiamento [R=301,NE,L]
 RewriteRule ^financiamento/?$ https://%{HTTP_HOST}/#financiamento [R=301,NE,L]
+RewriteCond %{QUERY_STRING} .
+RewriteRule ^projetos/?$ https://%{HTTP_HOST}/?%{QUERY_STRING}#projetos [R=301,NE,L]
 RewriteRule ^projetos/?$ https://%{HTTP_HOST}/#projetos [R=301,NE,L]
+RewriteCond %{QUERY_STRING} .
+RewriteRule ^execucao-e-reforma/?$ https://%{HTTP_HOST}/?%{QUERY_STRING}#servicos [R=301,NE,L]
 RewriteRule ^execucao-e-reforma/?$ https://%{HTTP_HOST}/#servicos [R=301,NE,L]
 RewriteRule ^(wp-admin|wp-content)(/.*)?$ https://%{HTTP_HOST}/ [R=302,L]
 RewriteRule ^(xmlrpc\.php|wp-login\.php)$ https://%{HTTP_HOST}/ [R=302,L]
