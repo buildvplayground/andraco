@@ -29,7 +29,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp   # o FTPS da Hostinger derruba a conexão de dados (ECONNRESET)
           local-dir: ./deploy-hostinger-site/
           server-dir: /domains/andracoengenharia.com.br/public_html/
           dangerous-clean-slate: false
@@ -50,7 +50,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp   # o FTPS da Hostinger derruba a conexão de dados (ECONNRESET)
           local-dir: ./deploy-hostinger-lp/
           # Pasta que a Hostinger cria para o subdomínio "lp". Conferir no hPanel depois de criar.
           server-dir: /domains/andracoengenharia.com.br/public_html/lp/
