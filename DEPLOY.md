@@ -84,3 +84,23 @@ Checado por script, não por inspeção visual:
 - Os 4 pacotes auditados **isoladamente**, cada um servido na sua porta:
   overflow horizontal 0 de 320 a 1920 px, 0 par de contraste abaixo do AA,
   0 imagem sem `alt` ou quebrada, 0 falha de rede em recurso próprio.
+
+## Hostinger (domínio do cliente), desde 18/11/2026
+
+O site e a LP saíram da Vercel e passaram a ser servidos pela hospedagem Hostinger
+do cliente. O deploy é automático pelo workflow `.github/workflows/deploy-hostinger.yml`
+(FTP, só o que mudou), a cada push no `main` que mexa nestas pastas:
+
+| Pasta | Destino | Origem do conteúdo |
+|---|---|---|
+| `deploy-hostinger-site/` | `andracoengenharia.com.br` → `/domains/andracoengenharia.com.br/public_html/` | a versão que estava no ar em `andraco.vercel.app`, que é a pasta `deploy-vercel/` do commit `1578938`, conferida arquivo por arquivo (107/107). **Não** é a `deploy-vercel-site/`, que nunca foi publicada. Inclui `/residencial`. |
+| `deploy-hostinger-lp/` | `lp.andracoengenharia.com.br` → `/domains/andracoengenharia.com.br/public_html/lp/` | `deploy-vercel-lp/`, igual ao que estava em `andraco-a6n4.vercel.app` |
+
+- O `.htaccess` de cada pasta faz o papel do `vercel.json`: URL sem `.html`, sem barra
+  no fim, redirecionamentos das páginas antigas do WordPress, https, www → sem www,
+  cabeçalhos de segurança e cache. Testado num Apache 2.4 local.
+- Secrets do repositório: `FTP_HOST` (só o IP), `FTP_USER` e `FTP_PASSWORD` da conta
+  FTP **principal** (acesso à raiz `/`, não presa em `public_html`).
+- O DNS fica na **Cloudflare** (conta do cliente). O domínio principal já aponta para
+  a Hostinger; o `lp` precisa de um CNAME `lp` → `andracoengenharia.com.br` (proxy ligado).
+- Para mudar o site, edite `deploy-hostinger-site/` (ou `deploy-hostinger-lp/`) e dê push.

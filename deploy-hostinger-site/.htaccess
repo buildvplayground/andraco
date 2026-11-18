@@ -1,0 +1,68 @@
+# Andraco Engenharia, site institucional na Hostinger (andracoengenharia.com.br)
+# Faz o mesmo que o vercel.json fazia na Vercel: URL sem .html, sem barra no fim,
+# redirecionamentos das páginas antigas do WordPress, cabeçalhos de segurança e cache.
+
+Options -Indexes -MultiViews
+DirectoryIndex index.html index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# https: a Cloudflare manda X-Forwarded-Proto, o que evita loop no SSL Flexible
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# www vai para o domínio sem www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# Páginas antigas do WordPress
+RewriteRule ^financiamento/?$ https://%{HTTP_HOST}/#financiamento [R=301,NE,L]
+RewriteRule ^projetos/?$ https://%{HTTP_HOST}/#projetos [R=301,NE,L]
+RewriteRule ^execucao-e-reforma/?$ https://%{HTTP_HOST}/#servicos [R=301,NE,L]
+RewriteRule ^(wp-admin|wp-content)(/.*)?$ https://%{HTTP_HOST}/ [R=302,L]
+RewriteRule ^(xmlrpc\.php|wp-login\.php)$ https://%{HTTP_HOST}/ [R=302,L]
+
+# /index e /index.html vão para /
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index(\.html)?[\s?] [NC]
+RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
+
+# /pagina.html vai para /pagina
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
+
+# Tira a barra do fim (trailingSlash: false)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# /pagina serve pagina.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+
+<FilesMatch "\.(webp|avif|jpe?g|png|gif|svg|ico|woff2?|ttf|otf|mp4|webm)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(css|js)$">
+  Header set Cache-Control "public, max-age=86400, must-revalidate"
+</FilesMatch>
+<FilesMatch "\.(html|xml|txt)$">
+  Header set Cache-Control "no-cache"
+</FilesMatch>
+</IfModule>
+
+# Arquivo de controle do deploy por FTP: não fica público
+<Files ".ftp-deploy-sync-state.json">
+  Require all denied
+</Files>

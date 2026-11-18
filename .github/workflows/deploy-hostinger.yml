@@ -1,0 +1,61 @@
+name: Deploy para Hostinger
+
+# Cada push no main sobe as duas pastas para a Hostinger por FTP (só o que mudou).
+#   deploy-hostinger-site/ -> andracoengenharia.com.br     (site institucional)
+#   deploy-hostinger-lp/   -> lp.andracoengenharia.com.br  (LP)
+# Secrets do repositório: FTP_HOST (só o IP), FTP_USER e FTP_PASSWORD da conta FTP principal.
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'deploy-hostinger-site/**'
+      - 'deploy-hostinger-lp/**'
+      - '.github/workflows/deploy-hostinger.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+
+jobs:
+  site:
+    name: Site (andracoengenharia.com.br)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sincronizar via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./deploy-hostinger-site/
+          server-dir: /domains/andracoengenharia.com.br/public_html/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.DS_Store
+
+  lp:
+    name: LP (lp.andracoengenharia.com.br)
+    needs: site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sincronizar via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./deploy-hostinger-lp/
+          # Pasta que a Hostinger cria para o subdomínio "lp". Conferir no hPanel depois de criar.
+          server-dir: /domains/andracoengenharia.com.br/public_html/lp/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.DS_Store

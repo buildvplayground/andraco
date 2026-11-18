@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# LP de teste A/B — servida a tráfego pago, fora do índice orgânico
+Disallow: /residencial
+Disallow: /residencial.html
+
+Sitemap: https://andracoengenharia.com.br/sitemap.xml
